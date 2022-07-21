@@ -21,6 +21,8 @@ function getComputerChoice()
     }
 }
 //alert(getComputerChoice());
+var winsComputer = 0;
+var winsPlayer = 0;
 
 function playRound(playerSelection, computerSelection)
 {
@@ -28,10 +30,14 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection === "Scissor")
         {
+            winsPlayer++;
+            winsComputer--;
             return("Hurray you win! Rocks beats scissors");
             
         }else if(computerSelection === "Paper")
         {
+            winsPlayer--;
+            winsComputer++;
             return("You Lose! Paper beats rock");
         }else
         {
@@ -41,9 +47,13 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection === "Rock")
         {
+            winsPlayer++;
+            winsComputer--;
             return("Hurray you win! Paper beats rock");   
         }else if(computerSelection === "Scissor")
         {
+            winsPlayer--;
+            winsComputer++;
             return("You Lose! Scissor beats paper");
         }else
         {
@@ -53,9 +63,13 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerSelection === "Rock")
         {
+            winsPlayer--;
+            winsComputer++;
             return("You Lose! Rock beats scissor");   
         }else if(computerSelection === "Paper")
         {
+            winsPlayer++;
+            winsComputer--;
             return("Hurray you win! Scissor beats paper");
         }else
         {
@@ -63,5 +77,24 @@ function playRound(playerSelection, computerSelection)
         }
     }
 }
+//console.log(playRound(getPlayerChoice(),getComputerChoice()));
 
-console.log(playRound(getPlayerChoice(),getComputerChoice()));
+function game()
+{
+    for(let i=0;i<5;i++)
+    {
+        console.log(playRound(getPlayerChoice(),getComputerChoice()));
+    }
+    if(winsPlayer > winsComputer)
+    {
+        alert("You win by : "+winsPlayer);
+    }else if(winsPlayer === winsComputer)
+    {
+        alert("Deuce!! Try again");
+    }else
+    {
+        alert("Computer Wins by : "+winsComputer);
+    }
+}
+
+game()
