@@ -80,30 +80,31 @@ function playRound(playerSelection, computerSelection)
         }
     }
 }
-/*
+var count = 0;
+
+
 //console.log(playRound(getPlayerChoice(),getComputerChoice()));
 
-function game()
+function game(cnt)
 {
-    for(let i=0;i<5;i++)
+    if(cnt == 5)
     {
-        console.log();
-    }
-    if(winsPlayer > winsComputer)
-    {
-        alert("You win by : "+winsPlayer);
-    }else if(winsPlayer === winsComputer)
-    {
-        alert("Deuce!! Try again");
-    }else
-    {
-        alert("Computer Wins by : "+winsComputer);
+        
+        if(winsPlayer > winsComputer)
+        {
+            resultMenu.textContent = "You win by : "+winsPlayer;
+        }else if(winsPlayer === winsComputer)
+        {
+            resultMenu.textContent ="Deuce!! Try again";
+        }else
+        {
+            resultMenu.textContent ="Computer Wins by : "+winsComputer;
+        }
+        winsPlayer = 0;
+        winsComputer = 0;
+        count = 0;
     }
 }
-
-game();
-
-*/
 
 function getPlayerChoice(choice)
 {
@@ -113,12 +114,17 @@ function getPlayerChoice(choice)
 const btns = document.querySelectorAll('button');
 const div = document.querySelector('.result');
 const result = document.createElement('h3');
+const resultMenu = document.createElement('p');
+
 div.appendChild(result);
+div.appendChild(resultMenu);
 
 btns.forEach(btn =>{
     btn.addEventListener('click',(e)=>{
         //getPlayerChoice();
-        result.textContent = playRound(e.target.classList.value,getComputerChoice());
+        const resultValue = playRound(e.target.classList.value,getComputerChoice());
+        result.textContent = resultValue;
+        game(count++);
     });
 });
     
