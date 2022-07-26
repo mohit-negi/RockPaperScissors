@@ -1,11 +1,14 @@
+/*
 function getPlayerChoice()
 {
-    let choice = prompt("Please enter your choice :");
+    //let choice = prompt("Please enter your choice :");
     choice = choice.toLowerCase();
     choice = choice.charAt(0).toUpperCase() + choice.slice(1);
 
     return choice;
 }
+*/
+
 function getComputerChoice()
 {
     let num = Math.floor(Math.random() * 3) + 1;
@@ -77,13 +80,14 @@ function playRound(playerSelection, computerSelection)
         }
     }
 }
+/*
 //console.log(playRound(getPlayerChoice(),getComputerChoice()));
 
 function game()
 {
     for(let i=0;i<5;i++)
     {
-        console.log(playRound(getPlayerChoice(),getComputerChoice()));
+        console.log();
     }
     if(winsPlayer > winsComputer)
     {
@@ -97,4 +101,25 @@ function game()
     }
 }
 
-game()
+game();
+
+*/
+
+function getPlayerChoice(choice)
+{
+    console.log(choice);
+    return choice;
+}
+const btns = document.querySelectorAll('button');
+const div = document.querySelector('.result');
+const result = document.createElement('h3');
+div.appendChild(result);
+
+btns.forEach(btn =>{
+    btn.addEventListener('click',(e)=>{
+        //getPlayerChoice();
+        result.textContent = playRound(e.target.classList.value,getComputerChoice());
+    });
+});
+    
+
