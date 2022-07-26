@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="./scripts/script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css"></link>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock paper scissors</title>
 </head>
 <body>
-    <script src="./scripts/script.js">
-    </script>
+    <header>
+        <div class="header">
+            <h1>Rock Paper Scissor</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="buttons">
+            <div id="Rock-button" class="Rock">
+                <img src="./photos/rock-gesture.svg" class="Rock">
+                <p class="Rock">Rock</p>
+            </div>
+            <div id="Paper-button" class="Paper">
+                <img src="./photos/paper-gesture.png" class="Paper">
+                <p class="Paper">Paper</p>
+            </div>
+            <div id="Scissor-button" class="Scissor">
+                <img src="./photos/scissor-gesture.png" class="Scissor">
+                <p class="Scissor">Scissor</p>
+            </div>
+            </div>
+            <section class="stat-bar">
+                <div class="result">
+                </div>
+            </section>
+    </div>
 </body>
 </html>

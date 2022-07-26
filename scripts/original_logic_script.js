@@ -87,7 +87,6 @@ var count = 0;
 
 function game(cnt)
 {
-    console.log(count);
     if(cnt == 5)
     {
         
@@ -96,14 +95,11 @@ function game(cnt)
             resultMenu.textContent = "You win by : "+winsPlayer;
         }else if(winsPlayer === winsComputer)
         {
-            resultMenu.textContent ="Nobody wins";
+            resultMenu.textContent ="Deuce!! Try again";
         }else
         {
             resultMenu.textContent ="Computer Wins by : "+winsComputer;
         }
-    }else if(cnt == 6)
-    {
-        resultMenu.textContent = null;
         winsPlayer = 0;
         winsComputer = 0;
         count = 0;
@@ -115,39 +111,21 @@ function getPlayerChoice(choice)
     console.log(choice);
     return choice;
 }
-//const btns = document.querySelectorAll('button');
+const btns = document.querySelectorAll('button');
 const div = document.querySelector('.result');
-const resultMenu = document.createElement('h5');
-const result = document.createElement('h4');
-
-
-const rockBtn = document.querySelector('.Rock');
-const paperBtn = document.querySelector('.Paper');
-const scissorBtn = document.querySelector('.Scissor');
+const result = document.createElement('h5');
+const resultMenu = document.createElement('h2');
 
 div.appendChild(result);
 div.appendChild(resultMenu);
 
-    rockBtn.addEventListener('click',(e)=>{
+btns.forEach(btn =>{
+    btn.addEventListener('click',(e)=>{
         //getPlayerChoice();
         const resultValue = playRound(e.target.classList.value,getComputerChoice());
         result.textContent = resultValue;
-        game(++count);
+        game(count++);
     });
-    paperBtn.addEventListener('click',(e)=>{
-        //getPlayerChoice();
-        const resultValue = playRound(e.target.classList.value,getComputerChoice());
-        result.textContent = resultValue;
-        game(++count);
-    });
-    scissorBtn.addEventListener('click',(e)=>{
-        //getPlayerChoice();
-        const resultValue = playRound(e.target.classList.value,getComputerChoice());
-        result.textContent = resultValue;
-        game(++count);
-    });
+});
     
-//To add styling to the element created in js adding classes to them
 
-result.classList.add('result-para');
-resultMenu.classList.add('result-menu');

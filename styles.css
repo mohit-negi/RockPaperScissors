@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.buttons img{
+    width: 100px;
+    height: 100px;
+}
+#Scissor-button .image{
+    width: 70px;
+}
+.header{
+    display: flex;
+    color: white;
+    background-color: #1f2937;
+    justify-content: center;
+    padding: 20px 30px;
+    align-items: center;
+}
+.buttons{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.buttons div{
+    display:flex;
+    border-radius: 30px;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    border: 1px  #1f2937 solid;
+    margin: 5px;
+}
+.buttons div:hover{
+    background-color: grey;
+    
+    color: white;
+}
+.stat-bar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 40px;
+    width: 30vw;
+    margin: 10px;
+}
+/* classes added with js DOM manipulations */
+.result{display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #1f2937;
+}
+.result-para{
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    margin: 10px;
+}
+.result-menu{
+    display: flex;
+    margin-top: 10px;
+    justify-content:center;
+    align-content: center;
+}
+.result-para h4,.result-menu h6{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
